@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: production
+  jpa:
+    show-sql: true
+    properties:
+      jadira:
+        usertype:
+          autoRegisterUserTypes: true
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+        order_inserts: true
+        jdbc:
+          batch_size: 10
+
+logging:
+  level:
+    root: INFO
+    com.chalocodekare.*: INFO
+
+server:
+  port: 8080

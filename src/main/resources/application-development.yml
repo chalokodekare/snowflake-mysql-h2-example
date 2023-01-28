@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: development
+  datasource:
+    url: jdbc:mysql://${db.host}/${db.schema}
+    username: ${db.userName}
+    password: ${db.password}
+    driver-class-name: com.mysql.jdbc.Driver
+
+db:
+  host: localhost:3306
+  userName: test
+  password: snowflake
+  schema: snowflake_test

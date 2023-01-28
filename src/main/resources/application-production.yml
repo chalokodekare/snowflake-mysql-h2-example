@@ -1,0 +1,20 @@
+spring:
+  config:
+    activate:
+      on-profile: production
+  datasource:
+    url: jdbc:snowflake://${db.host}/?db=${db.database}&warehouse=${db.warehouse}&schema=${db.schema}&role=${db.role}&CLIENT_SESSION_KEEP_ALIVE=true&CLIENT_RESULT_COLUMN_CASE_INSENSITIVE=true
+    username: ${db.userName}
+    password: ${db.password}
+    driver-class-name: net.snowflake.client.jdbc.SnowflakeDriver
+
+db:
+  # put proper snowflake url in host configuration.
+  host: {{resource-id}}.east-us-2.azure.snowflakecomputing.com
+  userName: test
+  password: snowflake
+  schema: snowflake_test
+  warehouse: snowflake_test_wh
+  database: snowflake_test_db
+  role: snowflake_test_role
+
